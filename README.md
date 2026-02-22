@@ -12,6 +12,24 @@ There are a couple convenience scripts located at the root of this directory if 
 
 For environment variables, create `server/.env.sh` and `source .env.sh` before `cargo run`, or install a dotfiles crate
 
+My development workflow is to open three terminals side by side, with the following contents:
+
+```bash
+./postgres.sh
+```
+
+```bash
+cd client
+npm run dev
+```
+
+```bash
+cd server
+cargo watch -x run
+```
+
+The full project will be available at https://localhost:5173
+
 All the source code in this repository is licensed under MIT:
 
 ```
