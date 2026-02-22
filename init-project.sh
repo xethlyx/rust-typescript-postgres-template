@@ -6,9 +6,19 @@ set -e
 define(){ IFS=$'\n' read -r -d '' ${1} || true; }
 
 define patch <<'EOF'
+diff -ruN client-original/package.json client/package.json
+--- client-original/package.json	2026-02-22 10:09:31.453683067 -0500
++++ client/package.json	2026-02-22 10:10:00.224031560 -0500
+@@ -1,5 +1,5 @@
+ {
+-	"name": "client",
++	"name": "rename-me",
+ 	"private": true,
+ 	"version": "0.0.1",
+ 	"type": "module",
 diff -ruN client-original/svelte.config.js client/svelte.config.js
---- client-original/svelte.config.js	2026-02-22 09:59:52.744416885 -0500
-+++ client/svelte.config.js	2026-02-22 09:59:52.746984245 -0500
+--- client-original/svelte.config.js	2026-02-22 10:09:31.453683067 -0500
++++ client/svelte.config.js	2026-02-22 10:09:31.455282190 -0500
 @@ -1,6 +1,6 @@
  import adapter from '@sveltejs/adapter-static';
 
@@ -18,8 +28,8 @@ diff -ruN client-original/svelte.config.js client/svelte.config.js
 
  export default config;
 diff -ruN client-original/vite.config.ts client/vite.config.ts
---- client-original/vite.config.ts	2026-02-22 09:59:52.744877626 -0500
-+++ client/vite.config.ts	2026-02-22 10:02:05.304107455 -0500
+--- client-original/vite.config.ts	2026-02-22 10:09:31.453683067 -0500
++++ client/vite.config.ts	2026-02-22 10:09:31.455485019 -0500
 @@ -15,7 +15,7 @@
  					browser: {
  						enabled: true,
