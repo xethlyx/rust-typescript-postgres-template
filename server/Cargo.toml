@@ -1,0 +1,22 @@
+[package]
+name = "rename-me"
+version = "0.1.0"
+edition = "2024"
+[[bin]]
+name = "rename-me"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0.102"
+axum = "0.8.8"
+bb8 = "0.9.1"
+bb8-postgres = "0.9.0"
+refinery = { version = "0.9.0", features = ["tokio-postgres"] }
+serde = "1.0.228"
+tokio = { version = "1.49.0", features = ["signal", "rt-multi-thread"] }
+tokio-postgres = "0.7.16"
+tower-http = { version = "0.6.8", features = ["trace", "fs"] }
+tracing = "0.1.44"
+tracing-error = "0.2.1"
+tracing-serde = "0.2.0"
+tracing-subscriber = { version = "0.3.22", features = ["env-filter", "json"] }
